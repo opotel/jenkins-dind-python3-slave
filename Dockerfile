@@ -8,22 +8,20 @@ LABEL "org.label-schema.vendor"="OPOTEL Ltd" \
 RUN curl -sSL https://get.docker.com/ | sh
 RUN apt-get update && apt-get install -y \
     software-properties-common
-RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa
-
-RUN apt-get update && apt-get install -y \
-     python3.7 \
-     python3-pip \
-     python3-venv
-     
-RUN apt-get install -y \
-     build-essential \
-     libssl-dev \
-     libnss3-dev \
-     libffi-dev \
-     python-dev \
-     zlib1g-dev \
-     libncurses5-dev \
-     libgdbm-dev \
-     libreadline-dev 
+    
+RUN apt-get update \
+    && apt-get dist-upgrade -y \
+    && apt-get -y install python3.7} \
+       libffi-dev \
+       libpq-dev \
+       libssl-dev \
+       python3-dev \
+       python3-pip \
+       python3-setuptools \
+       python3-venv \
+       python3-wheel \
+       build-essential \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -nsf /usr/bin/python3.5 /usr/bin/python
      
 RUN pip3 install numpy
