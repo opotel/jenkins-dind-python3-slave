@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     
 RUN apt-get update \
     && apt-get dist-upgrade -y \
-    && apt-get -y install python3.7.3 \
+    && apt-get -y install python3.7 \
        libffi-dev \
        libpq-dev \
        libssl-dev \
@@ -22,6 +22,6 @@ RUN apt-get update \
        python3-wheel \
        build-essential \
     && rm -rf /var/lib/apt/lists/* \
-    && ln -nsf /usr/bin/python3.7.3 /usr/bin/python
+    && ln -nsf /usr/bin/python3.7 /usr/bin/python
      
 RUN pip3 install numpy
