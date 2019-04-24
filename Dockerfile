@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     
 RUN apt-get update \
     && apt-get dist-upgrade -y \
-    && apt-get -y install python3.7} \
+    && apt-get -y install python3.7 \
        libffi-dev \
        libpq-dev \
        libssl-dev \
