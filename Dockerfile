@@ -5,7 +5,7 @@ LABEL "org.label-schema.vendor"="OPOTEL Ltd" \
     maintainer="dev@opotel.com" \
     description="Build, Test and Deploy as Docker image Python 3.7 apps"
 # Python Version    
-ARG ver=3.6  
+ARG ver=3.5  
 
 #Install Docker
 RUN curl -sSL https://get.docker.com/ | sh
